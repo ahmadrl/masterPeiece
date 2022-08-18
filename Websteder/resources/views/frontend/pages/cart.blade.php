@@ -30,7 +30,6 @@
 								<th>PRODUCT</th>
 								<th>NAME</th>
 								<th class="text-center">PRODUCT PRICE</th>
-								<th class="text-center">QUANTITY</th>
 								<th class="text-center">TOTAL</th>
 								<th class="text-center"><i class="ti-trash remove-icon"></i></th>
 							</tr>
@@ -50,23 +49,7 @@
 												<p class="product-des">{!!($cart['summary']) !!}</p>
 											</td>
 											<td class="price" data-title="Price"><span>${{number_format($cart['price'],2)}}</span></td>
-											<td class="qty" data-title="Qty"><!-- Input Order -->
-												<div class="input-group">
-													<div class="button minus">
-														<button type="button" class="btn btn-primary btn-number" disabled="disabled" data-type="minus" data-field="quant[{{$key}}]">
-															<i class="ti-minus"></i>
-														</button>
-													</div>
-													<input type="text" name="quant[{{$key}}]" class="input-number"  data-min="1" data-max="100" value="{{$cart->quantity}}">
-													<input type="hidden" name="qty_id[]" value="{{$cart->id}}">
-													<div class="button plus">
-														<button type="button" class="btn btn-primary btn-number" data-type="plus" data-field="quant[{{$key}}]">
-															<i class="ti-plus"></i>
-														</button>
-													</div>
-												</div>
-												<!--/ End Input Order -->
-											</td>
+											
 											<td class="total-amount cart_single_price" data-title="Total"><span class="money">${{$cart['amount']}}</span></td>
 
 											<td class="action" data-title="Remove"><a href="{{route('cart-delete',$cart->id)}}"><i class="ti-trash remove-icon"></i></a></td>
